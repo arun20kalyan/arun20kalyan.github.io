@@ -1,0 +1,462 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Roboto Mono";
+	panose-1:0 0 0 9 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+@page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-IN link=blue vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center;background:white'><span
+style='font-size:21.0pt;font-family:"Arial",sans-serif;color:#222D35'>Term
+Project Tutorial</span></p>
+
+<p class=MsoNormal align=center style='text-align:center;background:white'><span
+style='font-family:"Arial",sans-serif;color:#5F6368;background:white'>&nbsp;</span><span
+style='font-family:"Times New Roman",serif;color:black'><a
+href="https://www.kaggle.com/competitions/titanic"><span style='font-size:17.0pt;
+font-family:"Arial",sans-serif;color:#202124'>Titanic - Machine Learning from
+Disaster</span></a></span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:16.0pt;
+font-family:"Arial",sans-serif;color:black'>The challenge</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:11.0pt;
+font-family:"Arial",sans-serif;color:black'>The competition is simple: we want
+you to use the Titanic passenger data (name, age, price of the ticket, etc) to
+try to predict who will survive and who will die.</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:15.0pt;
+font-family:"Arial",sans-serif;color:black'>The data</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:11.0pt;
+font-family:"Arial",sans-serif;color:black'>To take a look at the competition
+data, click on the </span><b><span style='font-size:18.0pt;font-family:"Times New Roman",serif;
+color:black'><a href="https://www.kaggle.com/c/titanic/data"><span
+style='font-size:11.0pt;font-family:"Arial",sans-serif;color:#0077A3'>Data tab</span></a></span></b><span
+style='font-size:11.0pt;font-family:"Arial",sans-serif;color:black'> at the top
+of the competition page. Then, scroll down to find the list of files.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>There are three files in the data: (1) <b>train.csv</b>, (2) <b>test.csv</b>,
+and (3) <b>gender_submission.csv</b>.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Arial",sans-serif;
+color:black'>(1) train.csv</span></p>
+
+<p class=MsoListParagraph style='background:white'><span style='font-family:
+"Arial",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><b><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>train.csv</span></b><span style='font-size:11.0pt;line-height:
+200%;font-family:"Arial",sans-serif;color:black'> contains the details of a
+subset of the passengers on board (891 passengers, to be exact -- where each
+passenger gets a different row in the table). To investigate this data, click
+on the name of the file on the left of the screen. Once you've done this, you
+can view all of the data in the window.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:10.5pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=177 id="Picture 13"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image001.png"></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;line-height:200%;background:
+white'><span style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>The values in the second column (<b>&quot;Survived&quot;</b>) can
+be used to determine whether each passenger survived or not:</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='color:black;margin-top:24.0pt;line-height:200%;
+     background:white;vertical-align:baseline'><span style='font-size:11.0pt;
+     line-height:200%;font-family:"Arial",sans-serif'>if it's a &quot;1&quot;,
+     the passenger survived.</span></li>
+ <li class=MsoNormal style='color:black;margin-bottom:15.0pt;line-height:200%;
+     background:white;vertical-align:baseline'><span style='font-size:11.0pt;
+     line-height:200%;font-family:"Arial",sans-serif'>if it's a &quot;0&quot;,
+     the passenger died.</span></li>
+</ul>
+
+<p class=MsoNormal style='margin-top:12.0pt;line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>For instance, the first passenger listed in <b>train.csv</b> is
+Mr. Owen Harris Braund. He was 22 years old when he died on the Titanic.</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Arial",sans-serif;
+color:black'>(2) test.csv</span></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif;color:black'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>Using the patterns you find in <b>train.csv</b>, you have to
+predict whether the other 418 passengers on board (in <b>test.csv</b>)
+survived.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>Click on <b>test.csv</b> (on the left of the screen) to examine
+its contents. Note that <b>test.csv</b> does not have a <b>&quot;Survived&quot;</b>
+column - this information is hidden from you, and how well you do at predicting
+these hidden values will determine how high you score in the competition!</span></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif;color:black'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Arial",sans-serif;
+color:black'>(3) gender_submission.csv</span></p>
+
+<p class=MsoNormal style='background:white'><b><span style='font-size:13.5pt;
+font-family:"Times New Roman",serif;color:black'>&nbsp;</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;line-height:200%;background:
+white'><span style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>The <b>gender_submission.csv</b> file is provided as an example
+that shows how you should structure your predictions. It predicts that all
+female passengers survived, and all male passengers died. Your hypotheses
+regarding survival will probably be different, leading to a different
+submission file. But, just like this file, your submission should have</span></p>
+
+<ul style='margin-top:0cm' type=disc>
+ <li class=MsoNormal style='color:black;margin-top:24.0pt;line-height:200%;
+     background:white;vertical-align:baseline'><span style='font-size:11.0pt;
+     line-height:200%;font-family:"Arial",sans-serif'>a <b>&quot;PassengerId&quot;</b>
+     column containing the IDs of each passenger from <b>test.csv</b>.</span></li>
+ <li class=MsoNormal style='color:black;margin-bottom:15.0pt;line-height:200%;
+     background:white;vertical-align:baseline'><span style='font-size:11.0pt;
+     line-height:200%;font-family:"Arial",sans-serif'>a <b>&quot;Survived&quot;</b>
+     column (that you will create!) with a &quot;1&quot; for the rows where you
+     think the passenger survived, and a &quot;0&quot; where you predict that
+     the passenger died.</span></li>
+</ul>
+
+<p class=MsoNormal style='margin-top:24.0pt;line-height:200%;background:white'><span
+style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:15.0pt;
+font-family:"Arial",sans-serif;color:black'>Importing Data Frames</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=27 id="Picture 12"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image002.png"></span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black;background:white'>NumPy is a library for the Python programming
+language, that adds support for large, multi-dimensional arrays and matrices,
+along with a large collection of high-level mathematical functions to operate
+on these arrays.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black;background:white'>Pandas is a software library written for the
+Python programming language for data manipulation and analysis. In particular,
+it offers data structures and operations for manipulating numerical tables and
+time series.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:10.5pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm;background:white'><img
+border=0 width=468 height=111 id="Picture 11"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image003.png"></span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:11.0pt;
+font-family:"Arial",sans-serif;color:black'>Storing the train data into the
+‘train_data’ variable and displaying the first 5 rows of the data.</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:10.5pt;
+font-family:"Arial",sans-serif;color:black;border:none windowtext 1.0pt;
+padding:0cm'><img border=0 width=468 height=108 id="Picture 10"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image004.png"></span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-size:11.0pt;
+font-family:"Arial",sans-serif;color:black'>Storing the test data into the
+‘test_data’ variable and displaying the first 5 rows of the data.</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:15.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=54 id="Picture 9"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image005.png"></span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black'>Checking the percentage of women who survived in the training
+dataset is calculated in the above snippet.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=53 id="Picture 8"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image006.png"></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black'>Checking the percentage of men who survived in the training
+dataset is calculated in the above snippet.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=135 id="Picture 7"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image007.png"
+alt="Graphical user interface, text, application&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>I built what's known as a <b>random forest model</b>. This model
+is constructed of several &quot;trees&quot; (there are three trees in the
+picture below, but we'll construct 100!) that will individually consider each
+passenger's data and vote on whether the individual survived. Then, the random
+forest model makes a democratic decision: the outcome with the most votes wins!</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:10.5pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=219 id="Picture 6"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image008.png"
+alt="Diagram&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-size:10.5pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'>The code cell below looks for patterns in four different columns (<b>&quot;Pclass&quot;</b>,
+<b>&quot;Sex&quot;</b>, <b>&quot;SibSp&quot;</b>, and <b>&quot;Parch&quot;</b>)
+of the data. It constructs the trees in the random forest model based on
+patterns in the <b>train.csv</b> file, before generating predictions for the
+passengers in <b>test.csv</b>. The code also saves these new predictions in a
+CSV file <b>submission.csv</b>.</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:#0E1633'>Random Forest
+grows multiple decision trees which are merged together for a more accurate
+prediction.</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:#0E1633'>The logic behind
+the Random Forest model is that multiple uncorrelated models (the individual
+decision trees) perform much better as a group than they do alone. When using
+Random Forest for classification, each tree gives a classification or a “vote.”
+The forest chooses the classification with the majority of the “votes.” When
+using Random Forest for regression, the forest picks the average of the outputs
+of all trees.</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:#0E1633'>The key here
+lies in the fact that there is a low (or no) correlation between the individual
+models—that is, between the decision trees that make up the larger Random
+Forest model. While individual decision trees may produce errors, the majority
+of the group will be correct, thus moving the overall outcome in the right
+direction.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:#0E1633'>By following the
+tutorial in kaggle I was able to get a prediction score of <b>0.77511</b>.</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:#0E1633;border:none windowtext 1.0pt;
+padding:0cm'><img border=0 width=468 height=42 id="Picture 5"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image009.png"></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-family:"Times New Roman",serif;
+color:black'><br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:15.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black'>Contribution</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black'>In the tutorial
+given in Kaggle I used </span><span style='font-size:11.0pt;line-height:200%;
+font-family:"Roboto Mono";color:#BA2121'>&quot;Pclass&quot;</span><span
+style='font-size:11.0pt;line-height:200%;font-family:"Roboto Mono";color:black'>,
+</span><span style='font-size:11.0pt;line-height:200%;font-family:"Roboto Mono";
+color:#BA2121'>&quot;Sex&quot;</span><span style='font-size:11.0pt;line-height:
+200%;font-family:"Roboto Mono";color:black'>, </span><span style='font-size:
+11.0pt;line-height:200%;font-family:"Roboto Mono";color:#BA2121'>&quot;SibSp&quot;</span><span
+style='font-size:11.0pt;line-height:200%;font-family:"Roboto Mono";color:black'>,
+and </span><span style='font-size:11.0pt;line-height:200%;font-family:"Roboto Mono";
+color:#BA2121'>&quot;Parch&quot; </span><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black'>features for
+training the model and prediction. By analyzing the data set I figured out that
+the “Age” column can also be a factor in an individual survival rate.&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black'>But there are too
+many values missing in the “Age” column may be due to human error. This may
+lead to misprediction, so to avoid this I followed an approach of replacing all
+the missing values with NaN and then using the median of the whole data and
+replacing that with all the NaN values in our data. This will remove all the
+missing values and give us a better parameter to use in the prediction.</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black'>I tried using a
+few more different parameters but was not successful with them, my score even
+went to <b>0.77272.</b></span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><b><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black;border:none windowtext 1.0pt;
+padding:0cm'><img border=0 width=468 height=120 id="Picture 4"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image010.png"
+alt="Graphical user interface, application, Word&#10;&#10;Description automatically generated"></span></b></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black'>Finally, After
+adding the “Age” as one of the features and training the data I was able to
+increase my prediction </span><span style='font-size:11.0pt;line-height:200%;
+font-family:"Arial",sans-serif;color:#0E1633'>score from <b>0.77511</b></span><span
+style='font-size:11.0pt;line-height:200%;font-family:"Arial",sans-serif;
+color:black'> to <b>0.7799</b>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=43 id="Picture 3"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image011.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=468
+height=134 id="Picture 2"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image012.png"
+alt="Graphical user interface, text, application, email&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
+line-height:200%;font-family:"Arial",sans-serif;color:black;border:none windowtext 1.0pt;
+padding:0cm'><img border=0 width=468 height=103 id="Picture 1"
+src="Term%20Project%20Tutorial%20DM%20Blog.fld/image013.png"></span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-family:"Times New Roman",serif;
+color:black'><br>
+<br>
+</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif'>&nbsp;</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
