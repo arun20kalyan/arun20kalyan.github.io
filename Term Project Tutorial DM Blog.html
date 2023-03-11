@@ -213,10 +213,10 @@ font-family:"Arial",sans-serif;color:black'>Importing Data Frames</span></p>
 font-family:"Times New Roman",serif;color:black'>&nbsp;</span></b></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>import numpy as np </span></p>
+color:black'>import numpy as np </span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>import pandas as pd</span></p>
+color:black'>import pandas as pd</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
@@ -240,11 +240,14 @@ it offers data structures and operations for manipulating numerical tables and
 time series.</span></p>
 
 <p class=MsoNormal style='line-height:200%;background:white'><span
-style='font-family:"Times New Roman",serif;color:black'><code>train_data =
+style='font-family:"Times New Roman",serif;color:black'>train_data =
 pd.read_csv(&quot;train.csv&quot;)</span></p>
 
 <p class=MsoNormal style='line-height:200%;background:white'><span
-style='font-family:"Times New Roman",serif;color:black'><code>train_data.head()</span></p>
+style='font-family:"Times New Roman",serif;color:black'>train_data.head()</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='line-height:200%;background:white'><span
 style='font-size:10.5pt;line-height:200%;font-family:"Arial",sans-serif;
@@ -260,10 +263,13 @@ font-family:"Arial",sans-serif;color:black'>Storing the train data into the
 font-family:"Arial",sans-serif;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>test_data = pd.read_csv(&quot;test.csv&quot;)</span></p>
+color:black'>test_data = pd.read_csv(&quot;test.csv&quot;)</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>test_data.head()</span></p>
+color:black'>test_data.head()</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
 color:black'>&nbsp;</span></p>
@@ -284,17 +290,20 @@ font-family:"Arial",sans-serif;color:black'>Storing the test data into the
 font-family:"Arial",sans-serif;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>women = train_data.loc[train_data.Sex ==
+color:black'>women = train_data.loc[train_data.Sex ==
 'female'][&quot;Survived&quot;]</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>rate_women = sum(women)/len(women)</span></p>
+color:black'>rate_women = sum(women)/len(women)</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
 color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
-color:black'><code>print(&quot;% of women who survived:&quot;, rate_women)</span></p>
+color:black'>print(&quot;% of women who survived:&quot;, rate_women)</span></p>
+
+<p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='background:white'><span style='font-family:"Times New Roman",serif;
 color:black'>&nbsp;</span></p>
@@ -313,16 +322,18 @@ dataset is calculated in the above snippet.</span></p>
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>men
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>men
 = train_data.loc[train_data.Sex == 'male'][&quot;Survived&quot;]</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>rate_men
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>rate_men
 = sum(men)/len(men)</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>print(&quot;%
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>print(&quot;%
 of men who survived:&quot;, rate_men)</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
@@ -341,46 +352,48 @@ dataset is calculated in the above snippet.</span></p>
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>from
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>from
 sklearn.ensemble import RandomForestClassifier</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>y
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>y
 = train_data[&quot;Survived&quot;]</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>features
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>features
 = [&quot;Pclass&quot;, &quot;Sex&quot;, &quot;SibSp&quot;, &quot;Parch&quot;]</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>X
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>X
 = pd.get_dummies(train_data[features])</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>X_test
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>X_test
 = pd.get_dummies(test_data[features])</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>model
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>model
 = RandomForestClassifier(n_estimators=100, max_depth=5, random_state=1)</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>model.fit(X,
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>model.fit(X,
 y)</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>predictions
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>predictions
 = model.predict(X_test)</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>output
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>output
 = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predictions})</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>output.to_csv('submission.csv',
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>output.to_csv('submission.csv',
 index=False)</span></p>
 
-<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'><code>print(&quot;Your
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>print(&quot;Your
 submission was successfully saved!&quot;)</span></p>
+
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
@@ -400,6 +413,9 @@ is constructed of several &quot;trees&quot; (there are three trees in the
 picture below, but we'll construct 100!) that will individually consider each
 passenger's data and vote on whether the individual survived. Then, the random
 forest model makes a democratic decision: the outcome with the most votes wins!</span></p>
+
+<p class=MsoNormal style='line-height:200%;background:white'><span
+style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='line-height:200%;background:white'><span
 style='font-size:10.5pt;line-height:200%;font-family:"Arial",sans-serif;
@@ -453,6 +469,10 @@ line-height:200%;font-family:"Arial",sans-serif;color:#0E1633'>By following the
 tutorial in kaggle I was able to get a prediction score of <b>0.77511</b>.</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
 line-height:200%;font-family:"Arial",sans-serif;color:#0E1633;border:none windowtext 1.0pt;
 padding:0cm'><img border=0 width=950 height=85 id="Picture 5"
@@ -501,7 +521,11 @@ went to <b>0.77272.</b></span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
-color:black'><code>train_data.isnull().sum()</span></p>
+color:black'>train_data.isnull().sum()</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><b><span style='font-size:11.0pt;
@@ -521,19 +545,23 @@ color:black'> to <b>0.7799</b>.</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
-color:black'><code>train_data = train_data.replace(&quot; &quot;,np.NaN)</span></p>
+color:black'>train_data = train_data.replace(&quot; &quot;,np.NaN)</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
-color:black'><code>train_data = train_data.fillna(train_data['Age'].median())</span></p>
+color:black'>train_data = train_data.fillna(train_data['Age'].median())</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
-color:black'><code>test_data = test_data.replace(&quot; &quot;,np.NaN)</span></p>
+color:black'>test_data = test_data.replace(&quot; &quot;,np.NaN)</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
-color:black'><code>test_data = test_data.fillna(train_data['Age'].median())</span></p>
+color:black'>test_data = test_data.fillna(train_data['Age'].median())</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black;border:none windowtext 1.0pt;padding:0cm'><img border=0 width=946
@@ -544,60 +572,66 @@ src="Term%20Project%20Tutorial%20DM%20Blog.fld/image010.png"></span></p>
 color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>from sklearn.ensemble
+color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'>from sklearn.ensemble
 import RandomForestClassifier</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>y =
+color:black;border:none windowtext 1.0pt;padding:0cm'>y =
 train_data[&quot;Survived&quot;]</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>features =
+color:black;border:none windowtext 1.0pt;padding:0cm'>features =
 [&quot;Pclass&quot;, &quot;Sex&quot;, &quot;SibSp&quot;,
 &quot;Parch&quot;,&quot;Age&quot;]</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>X =
+color:black;border:none windowtext 1.0pt;padding:0cm'>X =
 pd.get_dummies(train_data[features])</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>X_test =
+color:black;border:none windowtext 1.0pt;padding:0cm'>X_test =
 pd.get_dummies(test_data[features])</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>model =
+color:black;border:none windowtext 1.0pt;padding:0cm'>model =
 RandomForestClassifier(n_estimators=600, max_depth=5, random_state=1)</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>model.fit(X, y)</span></p>
+color:black;border:none windowtext 1.0pt;padding:0cm'>model.fit(X, y)</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>predictions =
+color:black;border:none windowtext 1.0pt;padding:0cm'>predictions =
 model.predict(X_test)</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
 color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>output =
+color:black;border:none windowtext 1.0pt;padding:0cm'>output =
 pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predictions})</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>output.to_csv('submission1.csv',
+color:black;border:none windowtext 1.0pt;padding:0cm'>output.to_csv('submission1.csv',
 index=False)</span></p>
 
 <p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
-color:black;border:none windowtext 1.0pt;padding:0cm'><code>print(&quot;Your
+color:black;border:none windowtext 1.0pt;padding:0cm'>print(&quot;Your
 submission was successfully saved!&quot;)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;font-family:"Arial",sans-serif;
+color:black;border:none windowtext 1.0pt;padding:0cm'>&nbsp;</span></p>
 
 <p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
 
@@ -607,11 +641,17 @@ height=271 id="Picture 2"
 src="Term%20Project%20Tutorial%20DM%20Blog.fld/image011.png"
 alt="Graphical user interface, text, application, email&#10;&#10;Description automatically generated"></span></p>
 
+<p class=MsoNormal><span style='font-family:"Times New Roman",serif;color:black'>&nbsp;</span></p>
+
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:11.0pt;
 line-height:200%;font-family:"Arial",sans-serif;color:black;border:none windowtext 1.0pt;
 padding:0cm'><img border=0 width=949 height=208 id="Picture 1"
 src="Term%20Project%20Tutorial%20DM%20Blog.fld/image012.png"></span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
+color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-size:15.0pt;
@@ -633,7 +673,7 @@ line-height:200%;font-family:"Arial",sans-serif;color:black'>&nbsp;</span></p>
 <p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
 14.0pt;margin-left:0cm;line-height:200%'><span style='font-family:"Times New Roman",serif;
 color:black'><a
-href="https://arun20kalyan.github.io/Titanic.ipynb">Source Code</a></span></p>
+href="https://arun20kalyan.github.io/Titanic.ipynb">Source Code</span></p>
 
 <p class=MsoNormal style='margin-bottom:12.0pt'><span style='font-family:"Times New Roman",serif;
 color:black'><br>
