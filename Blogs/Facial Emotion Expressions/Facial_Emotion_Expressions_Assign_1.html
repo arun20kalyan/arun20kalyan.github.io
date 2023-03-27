@@ -1,0 +1,783 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Calibri Light";
+	panose-1:2 15 3 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:12.0pt;
+	font-family:"Calibri",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-right:0cm;
+	margin-left:0cm;
+	font-size:24.0pt;
+	font-family:"Times New Roman",serif;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:2.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;
+	font-weight:normal;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Calibri Light",sans-serif;
+	color:#2F5496;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+@page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-IN link=blue vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<h1 align=center style='margin-top:0cm;margin-right:0cm;margin-bottom:12.0pt;
+margin-left:0cm;text-align:center;line-height:33.0pt;vertical-align:baseline'><span
+style='font-size:21.0pt;font-family:"Arial",sans-serif;color:#202124'>Facial
+Emotion Expressions</span></h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:black;background:white'>A<span
+class=apple-converted-space>&nbsp;</span></span><span style='font-size:11.0pt'>facial
+recognition system<span class=apple-converted-space><span style='color:black;
+background:white'>&nbsp;</span></span><span style='color:black;background:white'>is
+a technology capable of matching a<span class=apple-converted-space>&nbsp;</span></span>human
+face<span class=apple-converted-space><span style='color:black;background:white'>&nbsp;</span></span><span
+style='color:black;background:white'>from a<span class=apple-converted-space>&nbsp;</span></span>digital
+image<span class=apple-converted-space><span style='color:black;background:
+white'>&nbsp;</span></span><span style='color:black;background:white'>or a<span
+class=apple-converted-space>&nbsp;</span></span>video frame<span
+class=apple-converted-space><span style='color:black;background:white'>&nbsp;</span></span><span
+style='color:black;background:white'>against a<span
+class=apple-converted-space>&nbsp;</span></span>database<span
+class=apple-converted-space><span style='color:black;background:white'>&nbsp;</span></span><span
+style='color:black;background:white'>of faces. Such a system is typically
+employed to<span class=apple-converted-space>&nbsp;</span></span>authenticate<span
+class=apple-converted-space><span style='color:black;background:white'>&nbsp;</span></span><span
+style='color:black;background:white'>users through<span
+class=apple-converted-space>&nbsp;</span></span>ID verification services<span
+style='color:black;background:white'>, and works by pinpointing and measuring
+facial features from a given image<sup>[1]</sup>. Under this huge umbrella we
+are going to use one of its branches in this project i.e., facial emotion
+expressions to detect emotions of humans from a data set from Kaggle.</span></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;background:white'>&nbsp;</span></p>
+
+<h2><b><span style='font-size:20.0pt;font-family:"Arial",sans-serif;color:windowtext;
+background:white'>&nbsp;</span></b></h2>
+
+<h2><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;color:black;
+background:white'>Importing the libraries required:</span></b></h2>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>import</span></b><span
+style='font-size:11.0pt'> pandas <b>as</b> pd</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>import</span></b><span
+style='font-size:11.0pt'> os</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>import</span></b><span
+style='font-size:11.0pt'> glob <b>as</b> gb</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>from</span></b><span
+style='font-size:11.0pt'> tensorflow <b>import</b> keras</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>from</span></b><span
+style='font-size:11.0pt'> keras.models <b>import</b> Sequential</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>from</span></b><span
+style='font-size:11.0pt'> keras.layers <b>import</b> Conv2D</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>from</span></b><span
+style='font-size:11.0pt'> keras.layers <b>import</b> MaxPooling2D</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>from</span></b><span
+style='font-size:11.0pt'> keras.layers <b>import</b> Flatten</span></p>
+
+<p class=MsoNormal><b><span style='font-size:11.0pt'>from</span></b><span
+style='font-size:11.0pt'> keras.layers <b>import</b> Dense <sup>[2]</sup></span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span style='font-size:26.0pt'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>pandas - This
+library is used for manipulation if data and analysis of data<sup>[3]</sup>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>os - This module
+provides a way to interact with the operating system. It can be used to access
+files, directories, environment variables, and other system-related information<sup>[3]</sup>,
+which we use to get our images for training and validation while building the
+model.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>glob – This module
+provides a way to find all the pathnames matching a specified pattern according
+to the rules used by the Unix shell, although results are returned in arbitrary
+order. It is often used to search for files in a directory that match a certain
+pattern<sup>[3]</sup>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>tensorflow – This
+is used here due to its high performance capabilities in handling large-scale
+computation and matrix multiplication operations<sup>[3]</sup>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>keras - This is
+a high-level neural networks API that is written in Python and can run on top
+of TensorFlow, CNTK, or Theano. It allows for fast experimentation with deep
+neural networks<sup>[3]</sup>. </span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:"Arial",sans-serif;
+color:#202122'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;
+color:#202122'>Storing the path of our dataset:</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:"Arial",sans-serif;
+color:#202122'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>TRAIN_DIR <b>=</b>
+&quot;/Users/akd/Facial Expressions/images/train/&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>TEST_DIR <b>=</b>
+&quot;/Users/akd/Facial Expressions/images/validation/&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>BATCH_SIZE<b>=</b>64</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:16.0pt;font-family:"Arial",sans-serif;
+color:#202122'>Checking the total number of items in each folder of the
+dataset:</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:20.0pt;font-family:"Arial",sans-serif;
+color:#202122'>&nbsp;</span></b></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>for folder in
+os.listdir(TRAIN_DIR):</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    files =
+gb.glob(pathname= str(TRAIN_DIR+ '/'+ folder + '/*.jpg'))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    print(f'For
+training data, found {len(files)} in folder {folder}') <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1002 height=145 id="Picture 1"
+src="Facial_Emotion_Expressions_Assign_1.fld/image001.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>for folder in
+os.listdir(TEST_DIR):</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    files =
+gb.glob(pathname= str(TEST_DIR+ '/'+ folder + '/*.jpg'))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    print(f'For
+testing data, found {len(files)} in folder {folder}') <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1002 height=144 id="Picture 2"
+src="Facial_Emotion_Expressions_Assign_1.fld/image002.png"
+alt="A picture containing background pattern&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>import random</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>import
+matplotlib.pyplot as plt</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>import
+matplotlib.image as mpimg</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>def
+view_random_image(target_dir, target_class):</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    # We will
+view images from here</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+target_folder = target_dir + target_class</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    </span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    # Get a
+random image path</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+random_image = random.sample(os.listdir(target_folder), 1)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    </span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    # read in
+the image and plot it using matplolib</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    img =
+mpimg.imread(target_folder+'/'+random_image[0])</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+plt.imshow(img)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+plt.title(target_class)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+plt.axis('off')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+print(f&quot;Image shape {img.shape}&quot;)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    </span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    return img <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The above
+function returns a random image for our dataset.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>class_names =
+['angry','disgust','fear','happy','neutral','sad','surprise']</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Creating a list
+with all the different expressions we have.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.figure(figsize=(20,10))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>for i in
+range(28):</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>   
+plt.subplot(4, 7, i+1)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    class_name
+= random.choice(class_names)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>    img =
+view_random_image(target_dir=&quot;/Users/akd/Facial
+Expressions/images/train/&quot;, target_class=class_name)</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img width=997
+height=506 id="Picture 3"
+src="Facial_Emotion_Expressions_Assign_1.fld/image003.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Here we are
+trying to generate a total of 28 images from our dataset with a fixed grid
+size.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>from
+keras.preprocessing.image import ImageDataGenerator</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>train_datagen =
+ImageDataGenerator(rescale = 1./255,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                  
+shear_range = 0.2,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                  
+zoom_range = 0.2,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                  
+horizontal_flip = True)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>test_datagen =
+ImageDataGenerator(rescale = 1./255)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>training_set =
+train_datagen.flow_from_directory(TRAIN_DIR,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                     
+                           target_size = (128, 128),</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                                
+batch_size = BATCH_SIZE,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                                
+class_mode = 'categorical')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>test_set =
+test_datagen.flow_from_directory(TEST_DIR,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                           
+target_size = (128, 128),</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                           
+batch_size = BATCH_SIZE,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                                           
+class_mode = 'categorical') <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1000 height=44 id="Picture 4"
+src="Facial_Emotion_Expressions_Assign_1.fld/image004.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The above code
+is used to pre-process image data for a machine learning model using the
+ImageDataGenerator class from the keras.preprocessing.image module.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The
+train_datagen object is created using ImageDataGenerator and contains various
+image augmentation techniques, such as rescaling, shearing, zooming, and
+horizontal flipping. These techniques are applied to the training set to
+increase the diversity of the data, thereby improving the generalization
+performance of the model.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The
+test_datagen object is also created using ImageDataGenerator but only rescales
+the test set images by a factor of 1/255.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The
+training_set object is created using the flow_from_directory() method from
+train_datagen, which takes the path to the directory containing the training
+set images, TRAIN_DIR, as input. It also sets the target size of the images to
+128x128 pixels, the batch size to BATCH_SIZE, and the class mode to
+'categorical', which means that the labels of the images are represented as
+one-hot encoded vectors.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Similarly, the
+test_set object is created using the flow_from_directory() method from
+test_datagen, which takes the path to the directory containing the test set
+images, TEST_DIR, as input.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>These
+pre-processed data generators are then fed into a machine learning model to
+train and evaluate the model's performance on the facial expression
+classification task <sup>[3]</sup>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Initialising
+the CNN</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier =
+Sequential()</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Step 1 -
+Convolution</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(Conv2D(16,
+(3, 3), input_shape = (128, 128, 3), activation = 'relu'))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Step 2 -
+Pooling</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(MaxPooling2D(pool_size
+= (2, 2)))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Adding a
+second convolutional layer</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(Conv2D(32,
+(3, 3), activation = 'relu'))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(MaxPooling2D(pool_size
+= (2, 2)))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Step 3 -
+Flattening</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(Flatten())</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Step 4 - Full
+connection</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(Dense(units
+= 128, activation = 'relu'))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.add(Dense(units
+= 7, activation = 'softmax'))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'># Compiling the
+CNN</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.compile(optimizer
+= 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy']) <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The above code
+initializes and compiles a Convolutional Neural Network (CNN) model with two
+convolutional layers, two pooling layers, one fully connected layer, and an
+output layer with softmax activation function for facial expression
+classification<sup>[3]</sup>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>## model
+summary</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.summary()
+<sup>[2]</sup></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1001 height=436 id="Picture 5"
+src="Facial_Emotion_Expressions_Assign_1.fld/image005.png"
+alt="Table&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Checking the
+summary of our model so far.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>history =
+classifier.fit(training_set,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                        
+epochs = 50,</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>                        
+validation_data = test_set)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.save('model1.h5') 
+# creates a HDF5 file 'my_model.h5' <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1004 height=513 id="Picture 6"
+src="Facial_Emotion_Expressions_Assign_1.fld/image006.png"
+alt="Table&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>The code trains
+the CNN model using the pre-processed training set and validation set, for 50
+epochs, and saves the trained model as an HDF5 file named 'model1.h5'<sup>[3]</sup>.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Our model
+accuracy is 73% for train data and 54% for the test data.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>classifier.evaluate(test_set)
+<sup>[2]</sup></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1006 height=65 id="Picture 7"
+src="Facial_Emotion_Expressions_Assign_1.fld/image007.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Evaluating our classifier
+with the test set.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>pd.DataFrame(history.history)[['loss','val_loss']].plot()</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.title('Loss')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.xlabel('epochs')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.ylabel('Loss')
+<sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1006 height=494 id="Picture 8"
+src="Facial_Emotion_Expressions_Assign_1.fld/image008.png"
+alt="Chart, line chart&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Plotting a
+graph for loss to check our results.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>pd.DataFrame(history.history)[['accuracy','val_accuracy']].plot()</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.title('Accuracy')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.xlabel('epochs')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>plt.ylabel('Accuracy')
+<sup>[2] </sup></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1011 height=492 id="Picture 9"
+src="Facial_Emotion_Expressions_Assign_1.fld/image009.png"
+alt="Chart, line chart&#10;&#10;Description automatically generated"></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Plotting a
+graph for accuracy to check our results.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>model_path =
+&quot;model1.h5&quot;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>loaded_model =
+keras.models.load_model(model_path)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>import
+matplotlib.pyplot as plt</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>import numpy as
+np</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>import cv2</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>from PIL import
+Image</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>image =
+cv2.imread(&quot;/Users/akd/Facial
+Expressions/images/train/disgust/299.jpg&quot;)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>image_fromarray
+= Image.fromarray(image, 'RGB')</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>resize_image = image_fromarray.resize((128,
+128))</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>expand_input =
+np.expand_dims(resize_image,axis=0)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>input_data =
+np.array(expand_input)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>input_data =
+input_data/255</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>pred =
+loaded_model.predict(input_data)</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>result =
+pred.argmax()</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>result <sup>[2]</sup></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1012 height=59 id="Picture 10"
+src="Facial_Emotion_Expressions_Assign_1.fld/image010.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Checking our
+model prediction capability.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>training_set.class_indices
+<sup>[2] </sup></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:20.0pt;color:#202122'><img
+width=1014 height=134 id="Picture 11"
+src="Facial_Emotion_Expressions_Assign_1.fld/image011.png"
+alt="Background pattern&#10;&#10;Description automatically generated with low confidence"></span></p>
+
+<p class=MsoNormal><sup><span style='font-size:20.0pt;color:#202122'>&nbsp;</span></sup></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>Checking our
+indices of different emotions.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>In the above
+code we gave the model a disgust image to test and we can see that the model
+has predicted as the given image as disgust by checking the indices.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>CNN, or
+Convolutional Neural Network, is a type of deep neural network that is commonly
+used for image analysis and processing. It uses a combination of convolutional
+layers, pooling layers, and fully connected layers to extract features from an
+image, reduce its dimensionality, and classify it into one or more categories.
+By leveraging the hierarchical structure of images and learning the relevant
+features, CNNs can achieve high accuracy in a variety of computer vision tasks
+such as object detection, facial recognition, and image segmentation<sup>[3]</sup>.
+This the model we used to train our model in the above code.</span></p>
+
+<p class=MsoNormal><span style='font-size:11.0pt;color:#202122'>&nbsp;</span></p>
+
+<h1 align=center style='text-align:center'><span style='font-size:21.0pt;
+font-family:"Arial",sans-serif'>Contribution</span></h1>
+
+<h1><span style='font-size:11.0pt;font-family:"Arial",sans-serif;font-weight:
+normal'>In the reference code the number of expressions were taken 6, I modified
+my code according to our data set i.e., 7 expressions.</span></h1>
+
+<h1 align=center style='text-align:center'><span style='font-size:21.0pt;
+font-family:"Arial",sans-serif'>Challenges</span></h1>
+
+<ol style='margin-top:0cm' start=1 type=1>
+ <li class=MsoNormal style='color:#202122'><span style='font-size:11.0pt'>Kernal
+     crash issue – Fixed it with using install instead of pip.</span></li>
+ <li class=MsoNormal style='color:#202122'><span style='font-size:11.0pt'>IOPub
+     data rate exceeded issue – Fixed it by updating ‘jupyter notbook –
+     NotebookApp.iopub_data_rate_limit=1.0e10’</span></li>
+ <li class=MsoNormal style='color:#202122'><span style='font-size:11.0pt'>CV2
+     import error – Installed opencv through terminal.</span></li>
+</ol>
+
+<h1 align=center style='text-align:center'><span style='font-size:21.0pt;
+font-family:"Arial",sans-serif'>References</span></h1>
+
+<h1><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;color:black;
+font-weight:normal'>[1] Facial recognition system. (2023, March 18). In<span
+class=apple-converted-space>&nbsp;</span><i>Wikipedia</i>. </span><span
+style='font-size:11.0pt'><a
+href="https://en.wikipedia.org/wiki/Facial_recognition_system"><span
+style='font-family:"Calibri",sans-serif;font-weight:normal'>https://en.wikipedia.org/wiki/Facial_recognition_system</span></a></span></h1>
+
+<h1><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;color:black;
+font-weight:normal'>[2] StudyGyaan. </span><span style='font-size:11.0pt'><a
+href="https://www.youtube.com/watch?v=nLlbJjVgZyo"><span style='font-family:
+"Calibri",sans-serif;font-weight:normal'>https://www.youtube.com/watch?v=nLlbJjVgZyo</span></a></span><span
+style='font-size:11.0pt;font-family:"Calibri",sans-serif;color:black;
+font-weight:normal'>. Emotion Classification python file. </span><span
+style='font-size:11.0pt'><a
+href="https://drive.google.com/file/d/1syrWpsgmcThF5twK0kzqai3GIOvmg2d7/view"><span
+style='font-family:"Calibri",sans-serif;font-weight:normal'>https://drive.google.com/file/d/1syrWpsgmcThF5twK0kzqai3GIOvmg2d7/view</span></a></span></h1>
+
+<h1><span style='font-size:11.0pt;font-family:"Calibri",sans-serif;color:black;
+font-weight:normal'>[3] ChatGPT, personal communication, February 11, 2023.</span></h1>
+
+<h1><span style='font-size:27.0pt;font-family:"Arial",sans-serif'>&nbsp;</span></h1>
+
+</div>
+
+</body>
+
+</html>
